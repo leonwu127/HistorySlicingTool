@@ -210,31 +210,30 @@ public class LineHistory {
 				 for (int Left = beginA[j]+1; Left<=endA[j]; Left++){
 					 oldOnlyList.add(Left);
 				 }
+				 //oldOnlyList.add("|");
 			 }		 
 			 for (int j = 0; j< i ; j++){
 				 for (int Right = beginB[j]+1; Right<=endB[j]; Right++){
 					 newOnlyList.add(Right);
 				 }
+				 //newOnlyList.add("|");
 			 }		 
 			 oldList.removeAll(oldOnlyList);
 			 newList.removeAll(newOnlyList);
 
+			 System.out.println(oldOnlyList);
+			 System.out.println(newOnlyList);
+			 
+			 
 			 int Left,Right;
 			 for(int index = 0; index < oldList.size() ; index++){
 				 Left = (int) oldList.toArray()[index];
 				 Right = (int) newList.toArray()[index];
 				 System.out.println(Left+","+Right);
 			     LinePair<Integer,Integer> lp = new LinePair<Integer,Integer>(Left,Right);
-			     matcher.add(lp);
-				 
+			     matcher.add(lp);				 
 			 }
-			 
-			 
-			    //for (int Line = 0;  Line < newFileLineNumber;Line++ ){
-			   // 	System.out.println(matcher.get(Line).getL() + "," + matcher.get(Line).getR()); 
-			    //} 
-			  
-			    
+			 		    
 		    } catch (IOException e)
 		    {
 		      e.printStackTrace();
